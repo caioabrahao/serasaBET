@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root{
+    --text: #e5eaf7;
+    --background: #070d19;
+    --primary: #6f9dff;
+    --secondary: rgb(40, 62, 117);
+    --accent: #e9b820;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Lexend Deca", serif;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.button{
+    text-decoration: none;
+    background: var(--primary);
+    color: var(--background);
+    font-weight: 500;
+    padding: .7rem 1rem;
+    border-radius: 10px;
+    width: 9rem;
+    font-size: 1.333rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover{
+    background: var(--accent);
+}
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+    h1{
+        font-size: 4.209rem;
+    }
+}
+
+.hero__content-box{
+    background: rgba(40, 62, 117, .3);
+    border-radius: 15px;
+    padding: 3%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.hero__texto{
+    width: 50%;
+}
+
+.hero__buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login__box{
+    background: rgba(40, 62, 117, .3);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 2%;
+
+    width: 50%;
+    height: 50%;
+}
+
+.login__box__illustration{
+    width: 50%;
+}
+
+.login__box__input{
+    width: 50%;
+    height: 100%;
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 70%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+}
+
+.input__textbox{
+    background: var(--primary);
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1rem;
+
+    color: black;
+    font-weight: 600;
+
+    width: 100%;
+}
+
+.input__textbox:focus{
+    filter: drop-shadow(0px 1px 3px rgba(233, 184, 32, 1));
+    border: none;
+    outline: none;
+}
+
+.form__button{
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1rem;
+    width: 100%;
+
+    cursor: pointer;
+}
+
+.signup{
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+}
+
+.signup__textbox{
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1rem;
+
+    font-weight: 600;
+}
+.signup__textbox:focus{
+    filter: drop-shadow(0px 1px 3px rgba(233, 184, 32, 1));
+    border: none;
+    outline: none;
+}
+
+.signup__datebox{
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1rem;
+
+
+}
+
+
+.signup__box{
+    background: var(--secondary);
+    padding: .7rem 1rem;
+    border-radius: 15px;
+
+    width: 30%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup__personal-data{
+    display: none;
+    .fields{
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+    }
+    .names{
+        display: flex;
+        flex-direction: row;
+
+        gap: 1rem;
+    }
+    .email{
+        input{
+            width: 100%;
+        }
+    }
+    .password{
+        input{
+            width: 100%;
+        }
+    }
+    .confirm-password{
+        input{
+            width: 100%;
+        }
+    }
+
+}
+
+.signup__other-info{
+    display: none;
+
+    .fields{
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+    }
+
+    .cpf{
+        input{
+            width: 100%;
+        }
+    }
+    .phone{
+        input{
+            width: 100%;
+        }
+    }
+    .birthdate{
+        input{
+            width: 100%;
+        }
+    }
+}
+
+.signup__address{
+    /*display: none;*/
+}
