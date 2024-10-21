@@ -143,7 +143,12 @@ body{
     width: 100%;
 
     cursor: pointer;
+    transition: 0.2s ease-in;
 }
+.form__button:hover{
+    scale: 102%;
+}
+
 
 .signup{
     form{
@@ -155,7 +160,7 @@ body{
     }
 }
 
-.signup__textbox{
+.form__textbox{
     background-color: var(--primary);
     color: black;
     border: none;
@@ -164,20 +169,36 @@ body{
 
     font-weight: 600;
 }
-.signup__textbox:focus{
+.form__textbox:focus{
     filter: drop-shadow(0px 1px 3px rgba(233, 184, 32, 1));
     border: none;
     outline: none;
 }
 
-.signup__datebox{
+.form__datebox{
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1rem;
+}
+
+.form__dropdown{
     background-color: var(--primary);
     color: black;
     border: none;
     border-radius: 10px;
     padding: .7rem 1rem;
 
+    width: 100%;
+    option{
 
+    }
+}
+.form__dropdown:focus{
+    filter: drop-shadow(0px 1px 3px rgba(233, 184, 32, 1));
+    border: none;
+    outline: none;
 }
 
 
@@ -196,7 +217,7 @@ body{
 }
 
 .signup__personal-data{
-    display: none;
+    /*display: none;*/
     .fields{
         display: flex;
         flex-direction: column;
@@ -255,5 +276,27 @@ body{
 }
 
 .signup__address{
-    /*display: none;*/
+    display: none;
+
+    .fields{
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        .logradouro-e-numero{
+            display: flex;
+            gap: 1rem;
+
+        }
+
+        .codigo-postal{
+            input{
+                width: 100%;
+            }
+        }
+        .cidade input{
+            width: 100%;
+        }
+    }
 }
