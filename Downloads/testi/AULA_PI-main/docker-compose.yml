@@ -1,0 +1,9 @@
+services:
+  mysql:
+    container_name: serasa-bet-mysql
+    image: bitnami/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=docker
+      - MYSQL_DATABASE=serasa-bet
