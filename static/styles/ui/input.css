@@ -1,0 +1,17 @@
+input {
+  color: inherit;
+  font: inherit;
+}
+
+.input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;  
+  border-radius: 0.375rem;
+  border: 1px solid hsl(var(--input));
+  background-color: hsl(var(--background));
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  outline: none;
+}

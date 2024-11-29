@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SerasaBet | Create Event</title>
+  <link rel="stylesheet" href="/static/styles/base.css">
+  <link rel="stylesheet" href="/static/styles/layout/header.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+  <link rel="stylesheet" href="/static/styles/create-event.css">
+  <link rel="stylesheet" href="/static/styles/ui/label.css">
+  <link rel="stylesheet" href="/static/styles/ui/input.css">
+  <link rel="stylesheet" href="/static/styles/ui/form.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/">
+      <div class="logo">
+        <img aria-describedby="logo-text" src="/static/assets/logo.svg" />
+        <span id="logo-text" class="logo__text">SerasaBet</span>
+      </div>
+    </a>
+
+    <div class="header__left">
+      <a href="/events/create">
+        <button class="button button--outline items-center button--sm">
+          <i data-lucide="plus"></i>
+          <i data-lucide="book-image"></i>
+        </button>
+      </a>
+      
+      <a href="/wallet">
+        <button class="button button--sm">
+          <i data-lucide="wallet"></i>
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <main class="create-event">
+    <h1 class="create-event__title">Create Event</h1>
+
+    <form id="form" class="form">
+      <div class="form__item">
+        <label class="label" for="name">Name</label>
+        <input class="input" id="name">
+        <p class="form__message"></p>
+      </div>
+
+      <div class="form__item">
+        <label class="label" for="description">Description</label>
+        <input class="input" id="description">
+        <p class="form__message"></p>
+      </div>
+      
+      <div class="form__item">
+        <label class="label" for="odds-value">Odds Value</label>
+        <input class="input" id="odds-value">
+        <p class="form__message"></p>
+      </div>
+
+      <div class="form__item">
+        <label class="label" for="date">Date</label>
+        <input class="input" id="date">
+        <p class="form__message"></p>
+      </div>
+
+      <div class="form__item">
+        <label class="label" for="betting-start-date">Betting Start Date</label>
+        <input class="input" id="betting-start-date">
+        <p class="form__message"></p>
+      </div>
+
+      <div class="form__item">
+        <label class="label" for="betting-end-date">Betting End Date</label>
+        <input class="input" id="betting-end-date">
+        <p class="form__message"></p>
+      </div>
+
+      <button id="submit-button" class="button submit-button">Submit</button>
+    </form>
+  </main>
+
+  <script src="/static/scripts/create-event.js" type="module"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons()</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SerasaBet | Wallet</title>
+  <link rel="stylesheet" href="/static/styles/base.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+  <link rel="stylesheet" href="/static/styles/layout/header.css">
+  <link rel="stylesheet" href="/static/styles/ui/card.css">
+  <link rel="stylesheet" href="/static/styles/ui/table.css">
+  <link rel="stylesheet" href="/static/styles/wallet.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/">
+      <div class="logo">
+        <img aria-describedby="logo-text" src="/static/assets/logo.svg" />
+        <span id="logo-text" class="logo__text">SerasaBet</span>
+      </div>
+    </a>
+
+    <div class="header__left">
+      <a href="/events/create">
+        <button class="button button--outline items-center button--sm">
+          <i data-lucide="plus"></i>
+          <i data-lucide="book-image"></i>
+        </button>
+      </a>
+      
+      <a href="/wallet">
+        <button class="button button--sm">
+          <i data-lucide="wallet"></i>
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <main class="wallet">
+    <h1 class="wallet__title">Your Wallet</h1>
+
+    <div class="wallet__cards">
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">Balance</div>
+      
+          <div class="card__description">
+            Increase your earnings by betting on events.
+          </div>
+        </div>
+
+        <div class="card__content">
+          <div id="balance" class="value">
+            <!-- This will be populated via JavaScript -->
+          </div>
+          
+          <div class="wallet-actions">
+            <button 
+              id="deposit-button"
+              class="button button--sm"
+            >
+              Deposit
+            </button>
+
+            <button 
+              id="withdraw-button"
+              class="button button--sm"
+            >
+              Withdraw
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">Your Bets</div>
+      
+          <div class="card__description">
+            Betting is fun! Bet on more events to relax.
+          </div>
+        </div>
+
+        <div class="card__content card__content--wallet">
+          <div id="bet-count" class="value">
+            <!-- This is populated via JavaScript -->
+          </div>
+
+          <a href="/events">
+            <button class="button button--sm">Find more events</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="wallet-history">
+      <h2 class="wallet-history__title">Your History</h2>
+
+      <div class="table__container">
+        <table class="table">
+          <thead class="table__header">
+            <tr class="table__row">
+              <th class="table__head">Type</th>
+              <th class="table__head">Amount</th>
+              <th class="table__head">Date</th>
+            </tr>
+          </thead>
+          <tbody id="history" class="table__body">
+            <!-- This will be populated via JavaScript -->
+          </tbody>
+        </table>
+      </div>      
+    </section>
+  </main>
+
+  <script src="/static/scripts/wallet.js" type="module"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons()</script>
+</body>
+</html>

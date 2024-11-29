@@ -1,0 +1,30 @@
+.create-event {
+  padding: 1rem;
+
+  @media (min-width: 640px) {
+    & {
+      padding: 2rem;
+    }
+  }
+}
+
+.create-event__title {
+  font-size: 2.25rem; 
+  line-height: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.form__item:last-child {
+  margin-bottom: 1rem;
+}
+
+.submit-button {
+  width: 100%;
+
+  @media (min-width: 640px) {
+    & {
+      max-width: 14rem;
+    }
+  }
+}

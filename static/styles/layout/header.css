@@ -1,0 +1,43 @@
+.header {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom-width: 1px;
+
+  @media (min-width: 640px) {
+    & {
+      padding: 0 2rem;
+    }
+  }
+}
+
+a[href="/"] {
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media (min-width: 768px) {
+    & {
+      top: 2.5rem;
+      left: 2.5rem;
+    }
+  }
+}
+
+.logo__text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: medium;
+}
+
+.header__left {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
