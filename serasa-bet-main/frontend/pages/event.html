@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serasa Bet | Your school will explode</title>
+  <link rel="stylesheet" href="/static/styles/base.css">
+  <link rel="stylesheet" href="/static/styles/event.css">
+  <link rel="stylesheet" href="/static/styles/layout/header.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/">
+      <div class="logo">
+        <img aria-describedby="logo-text" src="/static/assets/logo.svg" />
+        <span id="logo-text" class="logo__text">SerasaBet</span>
+      </div>
+    </a>
+    
+    <div class="header__left">
+      <a href="/events/create">
+        <button class="button button--outline items-center button--sm">
+          <i data-lucide="plus"></i>
+          <i data-lucide="book-image"></i>
+        </button>
+      </a>
+      
+      <a href="/wallet">
+        <button class="button button--sm">
+          <i data-lucide="wallet"></i>
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <main class="event">
+    <h1 id="event-title" class="event__title">
+      <!-- This will be populated via JavaScript  -->
+    </h1>
+
+    <div class="event__info">
+      <div class="event__row">
+        <span class="event__data">
+          Should happen 
+          <span id="date">
+            <!-- This will be populated via JavaScript  -->
+          </span>
+        </span>
+
+        <div class="event__separator"></div>
+
+        <span class="event__data">
+          R$ 
+          <span id="odds-value">
+            <!-- This will be populated via JavaScript  -->
+          </span>
+          per odd
+        </span>
+      </div>
+
+      <div class="event__row">
+        <span class="event__data">
+          Betting period between 
+          <span id="betting-start-date">
+            <!-- This will be populated via JavaScript  -->
+          </span> and 
+          <span id="betting-end-date">
+            <!-- This will be populated via JavaScript  -->
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <p id="event-description" class="event__description">
+      <!-- This will be populated via JavaScript  -->
+    </p>
+
+    <div class="event__betting-options">
+      <button id="will-happen" class="button">This event will happen</button>
+      <button id="wont-happen" class="button">This event won't happen</button>
+    </div>
+  </main>
+
+  <script src="/static/scripts/event.js" type="module"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons()</script>
+</body>
+</html>

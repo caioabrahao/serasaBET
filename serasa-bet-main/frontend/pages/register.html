@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | SerasaBet</title>
+  <meta name="description" content="Meet SerasaBet and have some fun betting on random events.">
+  <link rel="icon" href="/static/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles/base.css">
+  <link rel="stylesheet" href="/static/styles/ui/input.css">
+  <link rel="stylesheet" href="/static/styles/ui/form.css">
+  <link rel="stylesheet" href="/static/styles/ui/button.css">
+  <link rel="stylesheet" href="/static/styles/register.css">
+  <link rel="stylesheet" href="/static/styles/ui/animations.css">
+</head>
+<body>
+  <main class="register">
+    <div class="register__left">
+      <div class="register__left-inner">
+        <div class="register__info">
+          <h1 class="register__title">Welcome to SerasaBet!</h1>
+    
+          <h2 class="register__subtitle">
+            Have some fun betting on random events.
+          </h2>
+        </div>
+        
+        <form class="form">        
+          <div class="form__item">
+            <label for="name">Name</label>
+            <input id="name" class="input" />
+            <p class="form__message"></p>
+          </div>
+      
+          <div class="form__item">
+            <label for="date-of-birth">Date of Birth</label>
+            <input id="date-of-birth" class="input">
+            <p class="form__message"></p>
+          </div>
+  
+          <div class="form__item">
+            <label for="email">Email</label>
+            <input id="email" class="input" />
+            <p class="form__message"></p>
+          </div>
+              
+          <div class="form__item">
+            <label for="password">Password</label>
+            <input id="password" class="input">
+            <p class="form__message"></p>
+          </div>
+  
+          <button class="button">
+            Register
+          </button>
+        </form>
+
+        <p class="register__login-link">
+          Already have an account? <a href="register.html">Login</a>.
+        </p>
+      </div>
+    </div>
+
+    <div class="register__right"></div>
+  </main>
+
+  <script type="module" src="/static/scripts/register.js"></script>
+</body>
+</html>
