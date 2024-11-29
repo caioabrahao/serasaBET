@@ -30,4 +30,4 @@ def get_wallet_history_route(user):
   print(history)
   cursor.close()
 
-  return jsonify(history or []), 200
+  return jsonify({"history": history or []}), 200

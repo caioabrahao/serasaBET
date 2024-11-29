@@ -7,7 +7,6 @@ from app.utils.is_uuid import is_uuid
 from enum import Enum
 import uuid
 from datetime import datetime
-import pytz
 from decimal import Decimal
 
 bet_on_event_bp = Blueprint('bet_on_event', __name__)
@@ -53,7 +52,7 @@ def bet_on_event_route(user, event_id):
     return jsonify({ "message": "Event not found" }), 404
   
   betting_start_date, betting_end_date = event
-  now = datetime.now(pytz.UTC)
+  now = datetime.now()
 
   if now < betting_start_date or now >= betting_end_date:
     return jsonify({ "message": "This event is currently not accepting bets" }), 422

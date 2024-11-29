@@ -13,7 +13,7 @@ def apply_migration(cursor, migration_file):
       cursor.execute(statement)
 
 def main():
-  cnx = mysql.connector.connect(
+  db = mysql.connector.connect(
     host=os.environ.get('DB_HOST'),
     user=os.environ.get('DB_USER'),
     password=os.environ.get('DB_PASSWORD'),
@@ -21,7 +21,7 @@ def main():
     port=os.environ.get('DB_PORT'),
   )
 
-  cursor = cnx.cursor()
+  cursor = db.cursor()
 
   migrations_dir = 'migrations'
   migrations = sorted(f for f in os.listdir(migrations_dir) if f.endswith('.sql'))
@@ -30,10 +30,10 @@ def main():
     migration_file = os.path.join(migrations_dir, migration)
     print(f"applying {migration_file}...")
     apply_migration(cursor, migration_file)
-    cnx.commit()
+    db.commit()
 
     cursor.close()
-    cnx.close()
+    db.close()
 
 if __name__ == '__main__':
     main()

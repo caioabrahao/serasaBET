@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, make_response
 from marshmallow import Schema, fields, validate, ValidationError
 from app.db.connection import get_db
 from app.factories.tokens_factory import tokens_factory
@@ -52,4 +52,18 @@ def login_route():
     "role": user.get('role'),
   })
 
-  return jsonify(tokens)
+  response = make_response()
+
+  response.set_cookie(
+    "access_token", 
+    tokens.get('access_token'), 
+    httponly=True, max_age=3600,
+  )
+
+  response.set_cookie(
+    "refresh_token", 
+    tokens.get('refresh_token'), 
+    httponly=True, max_age=1728000
+  )
+
+  return response, 201
