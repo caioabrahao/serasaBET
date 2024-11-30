@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SerasaBet | Wallet</title>
+  <title>SerasaBet | Carteira</title>
   <link rel="stylesheet" href="/static/styles/base.css">
   <link rel="stylesheet" href="/static/styles/ui/button.css">
   <link rel="stylesheet" href="/static/styles/layout/header.css">
@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="/static/styles/ui/table.css">
   <link rel="stylesheet" href="/static/styles/wallet.css">
   <link rel="stylesheet" href="/static/styles/ui/button.css">
+  <link rel="stylesheet" href="/static/styles/ui/modal.css">
+  <link rel="stylesheet" href="/static/styles/ui/input.css">
+  <link rel="stylesheet" href="/static/styles/ui/label.css">
+  <link rel="stylesheet" href="/static/styles/ui/form.css">
 </head>
 <body>
   <header class="header">
@@ -38,36 +42,37 @@
   </header>
 
   <main class="wallet">
-    <h1 class="wallet__title">Your Wallet</h1>
+    <h1 class="wallet__title">Sua Carteira</h1>
 
     <div class="wallet__cards">
       <div class="card">
         <div class="card__header">
-          <div class="card__title">Balance</div>
+          <div class="card__title">Saldo</div>
       
           <div class="card__description">
-            Increase your earnings by betting on events.
+            Aumente seus ganhos apostando em eventos.
           </div>
         </div>
 
         <div class="card__content">
           <div id="balance" class="value">
-            <!-- This will be populated via JavaScript -->
+            <!-- Isto será preenchido via JavaScript -->
           </div>
           
           <div class="wallet-actions">
-            <button 
+            <button
+              data-custom-open="withdraw-modal"
               id="deposit-button"
               class="button button--sm"
             >
-              Deposit
+              Depositar
             </button>
 
             <button 
               id="withdraw-button"
               class="button button--sm"
             >
-              Withdraw
+              Retirar
             </button>
           </div>
         </div>
@@ -75,46 +80,117 @@
 
       <div class="card">
         <div class="card__header">
-          <div class="card__title">Your Bets</div>
+          <div class="card__title">Suas Apostas</div>
       
           <div class="card__description">
-            Betting is fun! Bet on more events to relax.
+            Apostar é divertido! Aposte em mais eventos para relaxar.
           </div>
         </div>
 
         <div class="card__content card__content--wallet">
           <div id="bet-count" class="value">
-            <!-- This is populated via JavaScript -->
+            <!-- Isto será preenchido via JavaScript -->
           </div>
 
           <a href="/events">
-            <button class="button button--sm">Find more events</button>
+            <button class="button button--sm">Encontrar mais eventos</button>
           </a>
         </div>
       </div>
     </div>
 
     <section class="wallet-history">
-      <h2 class="wallet-history__title">Your History</h2>
+      <h2 class="wallet-history__title">Seu Histórico</h2>
 
       <div class="table__container">
         <table class="table">
           <thead class="table__header">
             <tr class="table__row">
-              <th class="table__head">Type</th>
-              <th class="table__head">Amount</th>
-              <th class="table__head">Date</th>
+              <th class="table__head">Tipo</th>
+              <th class="table__head">Quantia</th>
+              <th class="table__head">Data</th>
             </tr>
           </thead>
           <tbody id="history" class="table__body">
-            <!-- This will be populated via JavaScript -->
+            <!-- Isto será preenchido via JavaScript -->
           </tbody>
         </table>
       </div>      
     </section>
   </main>
 
+  <div class="modal micromodal-slide" id="withdraw-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="withdraw-modal-title">
+        <div class="modal__header">
+          <h2 class="modal__title" id="withdraw-modal-title">
+            Sacar
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </div>
+        <form class="modal__content" id="withdraw-form">
+          <div class="form">
+            <div class="form__item">
+              <label class="label" for="withdraw-amount">Valor (em R$)</label>
+              <input class="input" type="number" id="withdraw-amount" min="0" value="0" step="any">
+            </div>
+
+            <div class="form__item">
+              <label for="pix-key" class="label">Sua chave PIX</label>
+              <input class="input" id="pix-key">
+            </div>
+          </div>
+
+          <footer class="modal__footer">
+            <button class="button">Sacar</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal micromodal-slide" id="deposit-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="deposit-modal-title">
+        <div class="modal__header">
+          <h2 class="modal__title" id="deposit-modal-title">
+            Depositar
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </div>
+        <form class="modal__content" id="deposit-form">
+          <div class="form">
+            <div class="form__item">
+              <label class="label" for="deposit-amount">Valor (em R$)</label>
+              <input class="input" type="number" id="deposit-amount" min="0" value="0" step="any">
+            </div>
+
+            <div class="form__item">
+              <label for="pix-key" class="label">Nome de seu Cartão</label>
+              <input class="input" id="pix-key">
+            </div>
+
+            <div class="form__item">
+              <label for="pix-key" class="label">Número de seu Cartão</label>
+              <input class="input" id="pix-key">
+            </div>
+
+            <div class="form__item">
+              <label for="pix-key" class="label">CVV</label>
+              <input class="input" id="pix-key">
+            </div>
+          </div>
+
+          <footer class="modal__footer">
+            <button class="button">Depositar</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="/static/scripts/wallet.js" type="module"></script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons()</script>
 </body>

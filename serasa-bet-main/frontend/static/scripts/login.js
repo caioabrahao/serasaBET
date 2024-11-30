@@ -41,7 +41,7 @@ form.addEventListener('submit', (event) => {
 
     if (response.status !== 201) {
       button.innerHTML = 'Login'
-      alert('Uh oh! There was an error on our end. Please try again later.')
+      alert('Ops! Houve um erro do nosso lado. Por favor, tente novamente mais tarde.')
 
       return
     }

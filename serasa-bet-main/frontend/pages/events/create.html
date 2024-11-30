@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SerasaBet | Create Event</title>
+  <title>SerasaBet | Criar Evento</title>
   <link rel="stylesheet" href="/static/styles/base.css">
   <link rel="stylesheet" href="/static/styles/layout/header.css">
   <link rel="stylesheet" href="/static/styles/ui/button.css">
@@ -38,41 +38,41 @@
   </header>
 
   <main class="create-event">
-    <h1 class="create-event__title">Create Event</h1>
+    <h1 class="create-event__title">Criar Evento</h1>
 
     <form id="form" class="form">
       <div class="form__item">
-        <label class="label" for="name">Name</label>
-        <input class="input" id="name">
+        <label class="label" for="title">Título</label>
+        <input class="input" id="title">
         <p class="form__message"></p>
       </div>
 
       <div class="form__item">
-        <label class="label" for="description">Description</label>
+        <label class="label" for="description">Descrição</label>
         <input class="input" id="description">
         <p class="form__message"></p>
       </div>
       
       <div class="form__item">
-        <label class="label" for="odds-value">Odds Value</label>
-        <input class="input" id="odds-value">
+        <label class="label" for="odds-value">Valor da cota (em R$)</label>
+        <input type="number" class="input" id="odds-value" min="0" value="0" step="any">
         <p class="form__message"></p>
       </div>
 
       <div class="form__item">
-        <label class="label" for="date">Date</label>
-        <input class="input" id="date">
+        <label class="label" for="date">Data do Evento</label>
+        <input class="input" id="date" maxlength="10">
         <p class="form__message"></p>
       </div>
 
       <div class="form__item">
-        <label class="label" for="betting-start-date">Betting Start Date</label>
+        <label class="label" for="betting-start-date">Data do início das apostas</label>
         <input class="input" id="betting-start-date">
         <p class="form__message"></p>
       </div>
 
       <div class="form__item">
-        <label class="label" for="betting-end-date">Betting End Date</label>
+        <label class="label" for="betting-end-date">Data de encerramento as apostas</label>
         <input class="input" id="betting-end-date">
         <p class="form__message"></p>
       </div>

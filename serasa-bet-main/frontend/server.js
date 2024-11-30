@@ -79,6 +79,6 @@ const server = createServer(async (request, response) => {
 
 const port = Number(process.env.PORT) || 3000
 
-server.listen(port, () => {
+server.listen(port, '0.0.0.0', () => {
   console.log('Listening on http://0.0.0.0:' + port)
 })

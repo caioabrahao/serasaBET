@@ -8,5 +8,5 @@
  * 
  */
 export function isPassword(text) {
-  return text.length < 8 ? 'Please enter at least 8 characters.' : null
+  return text.length < 8 ? 'Precisa de ao menos 8 caracteres' : null
 }

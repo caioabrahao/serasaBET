@@ -62,14 +62,14 @@ form.addEventListener('submit', (event) => {
   })
   .then((response) => {
     if (response.status === 409) {
-      alert('Email already in use. Maybe you should log in instead.')
+      alert('Email em uso, talvez você precise fazer login.')
       button.innerHTML = 'Register'
 
       return
     }
 
     if (response.status !== 201) {
-      alert('Uh oh! There was an error on our end. Please try again later.')
+      alert('Ops! Houve um erro do nosso lado. Por favor, tente novamente mais tarde.')
       button.innerHTML = 'Register'
 
       return

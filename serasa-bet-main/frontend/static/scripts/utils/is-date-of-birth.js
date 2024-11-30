@@ -9,16 +9,14 @@
  */
 export function isDateOfBirth(text) {
   if (text.length !== 10) {
-    return 'Please provide a valid date of birth.'
+    return 'Precisa ser válida'
   }
 
   const [day, month, year] = text.split('/').map(Number)
   const date = new Date(year, month - 1, day)
 
-  console.log(date)
-
   const now =  new Date()
   now.setHours(0, 0, 0, 0)
 
-  return date >= now ? 'Please provide a valid date of birth.' : null
+  return date >= now ? 'Precisa estar no passado' : null
 }

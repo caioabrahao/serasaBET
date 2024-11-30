@@ -9,5 +9,5 @@ const EMAIL_REGEX =
  * 
  */
 export function isEmail(text) {
-  return EMAIL_REGEX.test(text) ? null : 'Please enter a valid email.'
+  return EMAIL_REGEX.test(text) ? null : 'Precisa ser uma email'
 }

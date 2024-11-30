@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SerasaBet | Events</title>
+  <title>SerasaBet | Eventos</title>
   <link rel="stylesheet" href="/static/styles/base.css">
   <link rel="stylesheet" href="/static/styles/events.css">
   <link rel="stylesheet" href="/static/styles/layout/header.css">
@@ -15,12 +15,12 @@
   <header class="header">
     <a href="/">
       <div class="logo">
-        <img aria-describedby="logo-text" src="/static/assets/logo.svg" />
+        <img aria-describedby="logo-text" src="/static/assets/logo.svg" alt="SerasaBet Logo"/>
         <span id="logo-text" class="logo__text">SerasaBet</span>
       </div>
     </a>
 
-    <div class="header__left">
+    <nav class="header__left">
       <a href="/events/create">
         <button class="button button--outline items-center button--sm">
           <i data-lucide="plus"></i>
@@ -33,7 +33,7 @@
           <i data-lucide="wallet"></i>
         </button>
       </a>
-    </div>
+    </nav>
   </header>
 
   <main class="events">
@@ -44,10 +44,10 @@
           class="input search__input"
           type="text"
           placeholder="Search for events..."
-          className="rounded-r-none"
+          class="rounded-r-none"
         />
 
-        <button class="button search__button" type="submit" className="rounded-l-none">
+        <button class="button search__button" type="submit" class="rounded-l-none">
           Search
         </button>
       </div>
@@ -58,7 +58,7 @@
     </ul>
   </main>
 
-  <script src="/static/scripts/events.js"></script>
+  <script src="/static/scripts/events.js" type="module"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons()</script>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,7 @@
   </header>
 
   <main class="home">
-    <h1 class="home__title">Hi Traveller!</h1>
+    <h1 class="home__title">Oi Viajante!</h1>
 
     <form id="search-form" class="search">
       <div class="search__inner">
@@ -46,72 +46,72 @@
           id="search-input"
           class="input search__input"
           type="text"
-          placeholder="Search for events..."
+          placeholder="Pesquisar eventos..."
           className="rounded-r-none"
         />
 
         <button class="button search__button" type="submit" className="rounded-l-none">
-          Search
+          Pesquisar
         </button>
       </div>
     </form>
 
     <section class="scrollable-section">
       <h2 class="scrollable-section__title">
-        Events Closing Soon
+        Eventos Encerrando em Breve
       </h2>
 
       <ul id="events-closing-soon" class="scrollable-section__list">
-        <!-- This is populated via JavaScript -->
+        <!-- Populado via JavaScript -->
       </ul>
     </section>
 
     <section class="scrollable-section">
       <h2 class="scrollable-section__title">
-        Most Bet Events
+        Eventos Mais Apostados
       </h2>
 
       <ul id="most-bet-events" class="scrollable-section__list">
-        <!-- This is populated via JavaScript -->
+        <!-- Populado via JavaScript -->
       </ul>
     </section>
 
     <section class="scrollable-section">
-      <h2 class="scrollable-section__title">Categories</h2>
+      <h2 class="scrollable-section__title">Categorias</h2>
 
       <ul class="scrollable-section__list">
         <li class="scrollable-section__item">
-          <a href="/events?search=olympics">
+          <a href="/events?search=Olimpíadas">
             <div class="card category-card">
               <div class="category-card__icon">🏅</div>
-              <div class="category-card__title">Olympics</div>
+              <div class="category-card__title">Olimpíadas</div>
             </div>
           </a>
         </li>
         
         <li class="scrollable-section__item">
-          <a href="/events?search=catatrophes">
+          <a href="/events?search=Catástrofes">
             <div class="card category-card">
               <div class="category-card__icon">🌪️</div>
-              <div class="category-card__title">Catastrophes</div>
+              <div class="category-card__title">Catástrofes</div>
             </div>
           </a>
         </li>
         
         <li class="scrollable-section__item">
-          <a href="/events?search=elections">
+          <a href="/events?search=Eleições">
             <div class="card category-card">
               <div class="category-card__icon">🗳️</div>
-              <div class="category-card__title">Elections</div>
+              <div class="category-card__title">Eleições</div>
             </div>
           </a>
         </li>
           
         <li class="scrollable-section__item">
-          <a href="/events?search=stock%20exchange">
+          <a href="/events?search=Bolsa%20de%20Valores">
             <div class="card category-card">
               <div class="category-card__icon">📈</div>
-              <div class="category-card__title">Stock Exchange</div>
+              <div class="category-card__title">Bolsa de Valores</div>
             </div>
           </a>
         </li>
@@ -119,7 +119,7 @@
     </section>
   </main>
 
-  <script src="/static//scripts/home.js" type="module"></script>
+  <script src="/static/scripts/home.js" type="module"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons()</script>
 </body>

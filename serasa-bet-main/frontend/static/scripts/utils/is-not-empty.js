@@ -8,5 +8,5 @@
  * 
  */
 export function isNotEmpty(text) {
-  return text.length === 0 ? 'Field is required.' : null
+  return text.length === 0 ? 'Campo obrigatório' : null
 }

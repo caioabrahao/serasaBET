@@ -85,36 +85,65 @@ async function populate(params) {
 
 populate()
 
-document.querySelector('#deposit-button').addEventListener('click', () => {
-  const amount = prompt('Enter the amount you would like to deposit')
-
+function deposit(number) {
   fetch('http://localhost:5000/wallet/deposit', {
     method: 'POST',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ amount: Number(amount) }),
+    body: JSON.stringify({ amount: number }),
   })
   .then(() => {
-    balance = 'R$ ' + (balance + Number(amount))
-    document.querySelector('#balance').innerText = balance
+    balance = balance + number
+    document.querySelector('#balance').innerText = 'R$ ' + parseFloat(balance).toFixed(2)
   })
-})
+}
 
-document.querySelector('#withdraw-button').addEventListener('click', () => {
-  const amount = prompt('Enter the amount you would like to withdraw')
-
+function withdraw(number) {
   fetch('http://localhost:5000/wallet/withdraw', {
     method: 'POST',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ amount: Number(amount) }),
+    body: JSON.stringify({ amount: number }),
   })
   .then(() => {
-    balance = 'R$ ' + (balance - Number(amount))
-    document.querySelector('#balance').innerText = balance
+    balance = balance - number
+    document.querySelector('#balance').innerText = 'R$ ' + parseFloat(balance).toFixed(2)
   })
+}
+
+function transfer(type) {
+  const el = document.querySelector('#' + type + '-amount')
+  const amount = Number(el.value)
+
+  if (type === 'withdraw') {
+    withdraw(amount)
+  }
+
+  if (type === 'deposit') {
+    deposit(amount)
+  }
+}
+
+document.querySelector('#withdraw-form').addEventListener('submit', (event) => {
+  event.preventDefault()
+  transfer('withdraw')
+  MicroModal.close('withdraw-modal')
+})
+
+document.querySelector('#deposit-form').addEventListener('submit', (event) => {
+  event.preventDefault()
+  transfer('deposit')
+  MicroModal.close('deposit-modal')
+})
+
+document.querySelector('#deposit-button').addEventListener('click', () => {
+  MicroModal.show('deposit-modal')
+})
+
+document.querySelector('#withdraw-button').addEventListener('click', () => {
+  MicroModal.show('withdraw-modal')
 })

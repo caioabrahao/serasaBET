@@ -9,26 +9,26 @@ const bettingStartDate = document.querySelector('#betting-start-date')
 const bettingEndDate = document.querySelector('#betting-end-date')
 
 const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro',
 ]
 
 function formatGMT(gmt) {
   const date = new Date(gmt)
 
   return date.getDate() 
-    + ' ' + months[date.getMonth()] 
-    + ' ' + date.getFullYear()
+    + ' de ' + months[date.getMonth()] 
+    + ' de ' + date.getFullYear()
 }
 
 fetch('http://localhost:5000/events/' + id, {
@@ -53,7 +53,7 @@ fetch('http://localhost:5000/events/' + id, {
 })
 
 function handleBetOnEvent(bet) {
-  const amount = prompt('Enter the amount you want to bet on it')
+  const amount = prompt('Digite a quantia que você gostaria de apostar nisso')
 
   if (!Number(amount)) {
     return
@@ -68,13 +68,15 @@ function handleBetOnEvent(bet) {
     body: JSON.stringify({ amount: Number(amount), bet })
   }).then((response) => {
     if (response.status === 422) {
-      alert('Transfer denied.')
+      alert('Não foi possível completar a transação, verifique seu saldo e o período de apostas.')
       return
     }
 
-    if (response.status !== 201) {
-      alert('Uh oh! There was an error on our end. Please try again later.')
+    if (response.status !== 204) {
+      alert('Ops! Houve um erro do nosso lado. Por favor, tente novamente mais tarde.')
     }
+
+    alert('Obrigado! Sua aposta foi computada.')
   })
 }
 
