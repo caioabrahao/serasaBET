@@ -1,22 +1,16 @@
 from flask import Blueprint, request, jsonify
 from marshmallow import Schema, fields, ValidationError
-from mysql.connector import Error
 from app.guards.auth_required import auth_required
 from app.db.connection import get_db
 from app.utils.is_uuid import is_uuid
-from enum import Enum
 import uuid
 from datetime import datetime
 from decimal import Decimal
 
 bet_on_event_bp = Blueprint('bet_on_event', __name__)
 
-class Bet(Enum):
-  yes = 'yes',
-  no = 'no'
-
 class BetOnEventSchema(Schema):
-  bet = fields.Enum(Bet, required=True)
+  bet = fields.Str(required=True)
   amount = fields.Decimal(19, validate=lambda a: a >= 1, required=True)
 
 bet_on_event_schema = BetOnEventSchema()
@@ -74,22 +68,18 @@ def bet_on_event_route(user, event_id):
   cursor.nextset()
   bet_id = str(uuid.uuid4())
 
-  try:
-    db.start_transaction()
+  cursor.execute("""
+    UPDATE users
+    SET balance = balance - %s
+    WHERE id = %s
+  """, (amount, user_id))
 
-    cursor.execute("""
-      UPDATE users
-      SET balance = balance - %s,
-      WHERE id = %s
-    """, (amount, user_id))
+  cursor.nextset()
 
-    cursor.execute("""
-      INSERT INTO bets (id, user_id, event_id, bet, amount)
-      VALUES (%s, %s, %s, %s, %s)
-    """, (bet_id, user_id, event_id, bet, amount))
-  except Error as err:
-    db.rollback()
-    raise err
+  cursor.execute("""
+    INSERT INTO bets (id, user_id, event_id, bet, amount)
+    VALUES (%s, %s, %s, %s, %s)
+  """, (bet_id, user_id, event_id, bet, amount))
 
   cursor.close()
   db.commit()

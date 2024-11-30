@@ -13,19 +13,13 @@ def apply_migration(cursor, migration_file):
       cursor.execute(statement)
 
 def main():
-  print(os.environ.get('DB_HOST'))
-  print('main começou')
-  try: 
-      db = mysql.connector.connect(
-      host=os.environ.get('DB_HOST'),
-      user=os.environ.get('DB_USER'),
-      password=os.environ.get('DB_PASSWORD'),
-      database=os.environ.get('DB_DATABASE'),
-      port=os.environ.get('DB_PORT'),
-      )
-  except mysql.connector.Error as e:
-      print(e)
-  print('db conectado')
+  db = mysql.connector.connect(
+    host=os.environ.get('DB_HOST'),
+    user=os.environ.get('DB_USER'),
+    password=os.environ.get('DB_PASSWORD'),
+    database=os.environ.get('DB_DATABASE'),
+    port=os.environ.get('DB_PORT'),
+  )
 
   cursor = db.cursor()
 
@@ -42,7 +36,4 @@ def main():
     db.close()
 
 if __name__ == '__main__':
-    try:
-        main()
-    except Exception as e:
-        print(e)
+    main()
