@@ -48,12 +48,22 @@ def evaluate_event_route(user, event_id):
   cursor = db.cursor(dictionary=True)
 
   cursor.execute("""
-    SELECT title
+    SELECT title, created_by
     FROM events
-    WHERE created_by = %s AND id = %s
-  """, (user.get('id'), event_id))
+    WHERE id = %s
+  """, (event_id,))
 
   event = cursor.fetchone()
+
+  cursor.nextset()
+
+  cursor.execute("""
+    SELECT email
+    FROM users
+    WHERE id = %s
+  """, (event.get('created_by'),))
+
+  creator = cursor.fetchone()
 
   if not event:
     return jsonify({ "message": "Event not found" }), 404
@@ -78,7 +88,7 @@ def evaluate_event_route(user, event_id):
 
     resend_params: resend.Emails.SendParams = {
       "from": "SerasaBet <serasabet@spents.tech>",
-      "to": [user.get('email')],
+      "to": [creator.get('email')],
       "subject": f"{event.get('title')} was disapproved.",
       "html": f"Hi! Your event {event.get('title')} was disapproved due to {disapproval_reason}.",
     }
