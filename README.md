@@ -18,10 +18,10 @@ O projeto está relativamente desorganizado e precisa de adaptações para ser e
   - **Outros**: Resend, MySQL, Docker
 
 ## 🎴 Créditos
-- ♠️ [Caio Ribeiro Abrahão](https://github.com/caioabrahao)
-- ♥️ [João Pedro Pires de Andrade](https://github.com/juao1234)
-- ♦️ [Fábio Alexandre Barbosa Filho](https://github.com/binhoui)
-- ♣️ [Raphael Fernandes Sellos Moreira](https://github.com/raphaelfsmoreira)
+- ♣️ [Caio Ribeiro Abrahão](https://github.com/caioabrahao)
+- ♥️ [Fábio Alexandre Barbosa Filho](https://github.com/binhoui)
+- ♠️ [João Pedro Pires de Andrade](https://github.com/juao1234)
+- ♦️ [Raphael Fernandes Sellos Moreira](https://github.com/raphaelfsmoreira)
 
 ### Contribuições no GitHub:
 <a href="https://github.com/caioabrahao/serasaBET/graphs/contributors">
@@ -30,4 +30,4 @@ O projeto está relativamente desorganizado e precisa de adaptações para ser e
 
 ---
 
-    Desenvolvido como parte do Projeto Integrador II da turma de Engenharia de Software da PUC Campinas, 2º semestre de 2024.
+_Desenvolvido como parte do Projeto Integrador II da turma de Engenharia de Software da PUC Campinas, 2º semestre de 2024._
